@@ -28,7 +28,7 @@ public class PeopleController {
 
     @PostMapping
     public ResponseEntity<People> peoppleSaved(PeopleRequest request){
-        People save = service.save(request);//Criar response body
+        People save = service.save(request);
         return  ResponseEntity.status(HttpStatus.CREATED).body(save);
     }
 }
