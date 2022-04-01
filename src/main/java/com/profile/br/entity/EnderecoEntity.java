@@ -1,18 +1,17 @@
 package com.profile.br.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 public class EnderecoEntity {
 
     @Id
@@ -24,5 +23,8 @@ public class EnderecoEntity {
     private String estado;
     private String complemento;
 
-    //TODO Criar endereço dto, service, controller
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "id")
+    private People people;
+
+
 }

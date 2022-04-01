@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PeopleService {
 
-    private final PeopleRepository peopleRepository = null;
+    private final PeopleRepository peopleRepository;
 
     public Page<People> listAll(Pageable pageable){
         return peopleRepository.findAll(pageable);

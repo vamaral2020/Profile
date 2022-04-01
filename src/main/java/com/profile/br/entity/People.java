@@ -30,7 +30,6 @@ public class People {
     private SexoEnum sexo;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
     private EnderecoEntity endereco;
 
 
